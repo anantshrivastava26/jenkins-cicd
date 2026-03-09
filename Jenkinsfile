@@ -3,27 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                echo 'Cloning repository...'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
-                bat 'pip install -r requirements.txt'
+                bat 'python -m pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'pytest'
+                bat 'python -m pytest'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Build Successful!'
+                echo 'Pipeline executed successfully!'
             }
         }
 
