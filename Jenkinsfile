@@ -5,19 +5,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'python -m pytest'
+                bat 'npm test'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Pipeline executed successfully!'
+                echo 'Build Successful!'
             }
         }
 
